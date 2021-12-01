@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "./logo.png";
+import Dictionary from "./Dictionary";
 import './App.css';
 
 export default function App() {
@@ -9,8 +10,13 @@ export default function App() {
         <header className="App-header">
           <img src={logo} className="App-logo img-fluid" alt="logo"/>
           </header>
+          <main>
+            <Dictionary/>
+            </main>
   
-      <footer className="text-center"> Coded by Andrea Hitchin</footer>
+      <footer className="App-footer"> 
+      <small>Coded by Andrea Hitchin</small>
+      </footer>
     </div>
     </div>
   );
