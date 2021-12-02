@@ -1,25 +1,28 @@
 import React from "react";
 import logo from "./logo.png";
 import Dictionary from "./Dictionary";
-import './App.css';
+import "./App.css";
 
-export default function App() {
+function App() {
   return (
     <div className="App">
       <div className="container">
         <header className="App-header">
           <img src={logo} className="App-logo img-fluid" alt="logo"/>
           </header>
-          <main>
-            <Dictionary/>
-            </main>
+          <Dictionary defaultKeyword="unicorn"/>
+          <footer>
+          This project was coded by Andrea Hitchin and is 
+          <a href="https://github.com/00Dre00/react-dictionary-search" target="_blank" rel="noopener noreferrer"> open-sourced on GitHub</a>
+          and 
+          <a href="https://brave-einstein-60ea29.netlify.app" target="_blank" rel="noopener noreferrer"> hosted on Netlify</a>
+          </footer>
+          </div>
+          </div>
   
-      <footer className="App-footer"> 
-      <small>Coded by Andrea Hitchin</small>
-      </footer>
-    </div>
-    </div>
   );
 }
+
+export default App;
 
 
