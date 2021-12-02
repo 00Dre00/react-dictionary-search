@@ -19,7 +19,7 @@ function handleResponse(response){
     let apiUrl=`https://api.pexels.com/v1/search?query=${response.data[0].word}&per_page=9`;
     let apiKey="563492ad6f91700001000001c41dbc39f0fe42a2a5788fe27e52aa83";
     axios
-    .get(apiUrl, {headers:{Authorization=`Bearer, ${apiKey}`}})
+    .get(apiUrl, {headers:{Authorization:`Bearer, ${apiKey}`}})
     .then(handleImages);
 }
 
