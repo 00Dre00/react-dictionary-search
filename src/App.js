@@ -8,6 +8,7 @@ function App() {
     <div className="App">
       <div className="container">
         <header className="App-header">
+          <h1>Dictionary</h1>
           <img src={logo} className="App-logo img-fluid" alt="logo"/>
           </header>
           <Dictionary defaultKeyword="unicorn"/>
