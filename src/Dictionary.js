@@ -7,9 +7,18 @@ export default function Dictionary(props){
 let[keyword, setKeyword] = useState(props.defaultKeyword);
 let[results, setResults] = useState(null);
 let[loaded, setLoaded] = useState(false);
+let[photos, setPhotos]= useState([]);
+
+function handleImages(response){
+    setPhotos(response.data.photos);}
 
 function handleResponse(response){
     setResults(response.data[0]);
+    let apiUrl=`https://api.pexels.com/v1/search?query=${response.data[0].word}&per_page=9`;
+    let apiKey ="563492ad6f91700001000001c41dbc39f0fe42a2a5788fe27e52aa83";
+    axios
+    .get(apiUrl, {headers:{ Authorization: `Bearer ${apiKey}`}})
+    .then(handleImages);
 }
 
 function search(){
