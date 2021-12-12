@@ -14,16 +14,18 @@ function handleImages(response){
 
 function handleResponse(response){
     setResults(response.data[0]);
-    let apiUrl=`https://api.pexels.com/v1/search?query=${response.data[0].word}&per_page=9`;
-    let apiKey ="563492ad6f91700001000001c41dbc39f0fe42a2a5788fe27e52aa83";
+    let pexelsApiUrl=`https://api.pexels.com/v1/search?query=${response.data[0].word}&per_page=9`;
+    let pexelsApiKey="563492ad6f91700001000001c41dbc39f0fe42a2a5788fe27e52aa83";
     axios
-    .get(apiUrl, {headers:{ Authorization: `Bearer ${apiKey}`}})
+    .get(pexelsApiUrl, {headers:{ Authorization: `Bearer ${pexelsApiKey}`}})
     .then(handleImages);
 }
 
 function search(){
     let apiUrl=`https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
     axios.get(apiUrl).then(handleResponse);
+
+    
 }
 
 function handleSubmit(event){
